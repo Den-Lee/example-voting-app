@@ -11,6 +11,9 @@ ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 
+LABEL "Project"="HomeWork"
+LABEL "Author"="DenLee"
+
 WORKDIR /source
 COPY *.csproj .
 RUN case ${TARGETPLATFORM} in \

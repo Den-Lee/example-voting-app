@@ -1,5 +1,8 @@
 FROM node:18-slim
 
+LABEL "Project"="HomeWork"
+LABEL "Author"="DenLee"
+
 # add curl for healthcheck
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

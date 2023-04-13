@@ -3,10 +3,9 @@
 # version is now using "compose spec"
 # v2 and v3 are now combined!
 # docker-compose v1.27+ required
-
 services:
   vote:
-    image: dockersamples/examplevotingapp_vote
+    image: ergotoro/examplevotingapp_vote
     depends_on:
       redis:
         condition: service_healthy 
@@ -17,7 +16,7 @@ services:
       - back-tier
 
   result:
-    image: dockersamples/examplevotingapp_result
+    image: ergotoro/examplevotingapp_result
     depends_on:
       db:
         condition: service_healthy 
@@ -28,7 +27,7 @@ services:
       - back-tier
 
   worker:
-    image: dockersamples/examplevotingapp_worker
+    image: ergotoro/examplevotingapp_worker
     depends_on:
       redis:
         condition: service_healthy 
