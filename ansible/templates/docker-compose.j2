@@ -4,7 +4,7 @@ services:
   vote:
     image: acm:5000/examplevotingapp_vote:v1
     ports:
-      - "5050:80"
+      - "5000:80"
     networks:
       - front-tier
       - back-tier
@@ -12,7 +12,7 @@ services:
   result:
     image: acm:5000/examplevotingapp_result:v1
     ports:
-      - "5051:80"
+      - "5001:80"
     networks:
       - front-tier
       - back-tier
