@@ -1,0 +1,45 @@
+# for running in docker compose with prebuilt images
+version: '2'
+services:
+  vote:
+    image: acm:5000/examplevotingapp_vote:v1
+    ports:
+      - "5050:80"
+    networks:
+      - front-tier
+      - back-tier
+
+  result:
+    image: acm:5000/examplevotingapp_result:v1
+    ports:
+      - "5051:80"
+    networks:
+      - front-tier
+      - back-tier
+
+  worker:
+    image: acm:5000/examplevotingapp_worker:v1
+    networks:
+      - back-tier
+
+  redis:
+    image: redis:alpine
+    networks:
+      - back-tier
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+
+networks:
+  front-tier:
+  back-tier:

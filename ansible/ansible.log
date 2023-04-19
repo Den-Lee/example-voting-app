@@ -1,0 +1,167 @@
+2023-04-19 21:07:48,184 p=20609 u=vagrant n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/vagrant/example-voting-app/ansible/votingapp-container-setup.yml': line 8, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Include vars
+    include_vars:
+    ^ here
+
+2023-04-19 21:09:08,151 p=20634 u=vagrant n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/vagrant/example-voting-app/ansible/votingapp-container-setup.yml': line 8, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Include vars
+    include_vars:
+    ^ here
+
+2023-04-19 21:09:32,996 p=20639 u=vagrant n=ansible | ERROR! conflicting action statements: include_vars, dir
+
+The error appears to be in '/home/vagrant/example-voting-app/ansible/votingapp-container-setup.yml': line 7, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+    - name: Include vars
+      ^ here
+
+2023-04-19 21:10:05,164 p=20644 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:10:05,183 p=20644 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:10:11,485 p=20644 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:10:11,533 p=20644 u=vagrant n=ansible | TASK [Include vars] ***************************************************************************************************************************
+2023-04-19 21:10:11,559 p=20644 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "/home/vagrant/example-voting-app/ansible/vars/all does not have a valid extension: yaml, yml, json"}
+2023-04-19 21:10:11,562 p=20644 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:10:11,564 p=20644 u=vagrant n=ansible | app01-staging              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-19 21:11:49,323 p=20677 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:11:49,333 p=20677 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:11:54,671 p=20677 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:11:54,719 p=20677 u=vagrant n=ansible | TASK [Include vars] ***************************************************************************************************************************
+2023-04-19 21:11:54,745 p=20677 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "/home/vagrant/example-voting-app/ansible/vars/all does not have a valid extension: yaml, yml, json"}
+2023-04-19 21:11:54,748 p=20677 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:11:54,748 p=20677 u=vagrant n=ansible | app01-staging              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-19 21:12:34,452 p=20710 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:12:34,464 p=20710 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:12:38,582 p=20710 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:12:38,627 p=20710 u=vagrant n=ansible | TASK [Create remote temp dir] *****************************************************************************************************************
+2023-04-19 21:12:39,031 p=20710 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:12:39,058 p=20710 u=vagrant n=ansible | TASK [Copy Docker Compose files] **************************************************************************************************************
+2023-04-19 21:12:39,431 p=20710 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:12:39,458 p=20710 u=vagrant n=ansible | TASK [Stop all docker containers] *************************************************************************************************************
+2023-04-19 21:12:39,860 p=20710 u=vagrant n=ansible | skipping: [app01-staging]
+2023-04-19 21:12:39,886 p=20710 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] *******************************************************************************************
+2023-04-19 21:12:40,148 p=20710 u=vagrant n=ansible | skipping: [app01-staging]
+2023-04-19 21:12:40,174 p=20710 u=vagrant n=ansible | TASK [Setup with docker-compose] **************************************************************************************************************
+2023-04-19 21:12:40,430 p=20710 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"changed": false, "cmd": "docker-compose up -d", "delta": null, "end": null, "msg": "Unable to change directory before execution: [Errno 2] No such file or directory: b'/tmp/voapp'", "rc": null, "start": null, "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2023-04-19 21:12:40,431 p=20710 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:12:40,432 p=20710 u=vagrant n=ansible | app01-staging              : ok=3    changed=2    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2023-04-19 21:13:06,726 p=20817 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:13:06,736 p=20817 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:13:10,584 p=20817 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:13:10,630 p=20817 u=vagrant n=ansible | TASK [Create remote temp dir] *****************************************************************************************************************
+2023-04-19 21:13:11,011 p=20817 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:13:11,040 p=20817 u=vagrant n=ansible | TASK [Copy Docker Compose files] **************************************************************************************************************
+2023-04-19 21:13:11,754 p=20817 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:13:11,777 p=20817 u=vagrant n=ansible | TASK [Stop all docker containers] *************************************************************************************************************
+2023-04-19 21:13:12,313 p=20817 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.146689", "end": "2023-04-19 21:13:12.292111", "msg": "non-zero return code", "rc": 1, "start": "2023-04-19 21:13:12.145422", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2023-04-19 21:13:12,313 p=20817 u=vagrant n=ansible | ...ignoring
+2023-04-19 21:13:12,338 p=20817 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] *******************************************************************************************
+2023-04-19 21:13:12,691 p=20817 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:13:12,714 p=20817 u=vagrant n=ansible | TASK [Setup with docker-compose] **************************************************************************************************************
+2023-04-19 21:13:14,061 p=20817 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"changed": true, "cmd": "docker-compose up -d", "delta": "0:00:01.071076", "end": "2023-04-19 21:13:14.024303", "msg": "non-zero return code", "rc": 1, "start": "2023-04-19 21:13:12.953227", "stderr": "Creating network \"voapp_front-tier\" with the default driver\nCreating network \"voapp_back-tier\" with the default driver\nCreating volume \"voapp_db-data\" with default driver\nPulling vote (localhost:5000/examplevotingapp_vote:v1)...\nGet \"http://localhost:5000/v2/\": dial tcp [::1]:5000: connect: connection refused", "stderr_lines": ["Creating network \"voapp_front-tier\" with the default driver", "Creating network \"voapp_back-tier\" with the default driver", "Creating volume \"voapp_db-data\" with default driver", "Pulling vote (localhost:5000/examplevotingapp_vote:v1)...", "Get \"http://localhost:5000/v2/\": dial tcp [::1]:5000: connect: connection refused"], "stdout": "", "stdout_lines": []}
+2023-04-19 21:13:14,062 p=20817 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:13:14,063 p=20817 u=vagrant n=ansible | app01-staging              : ok=5    changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2023-04-19 21:17:24,252 p=20997 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:17:24,269 p=20997 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:17:29,981 p=20997 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:17:30,031 p=20997 u=vagrant n=ansible | TASK [Create remote temp dir] *****************************************************************************************************************
+2023-04-19 21:17:30,475 p=20997 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:17:30,504 p=20997 u=vagrant n=ansible | TASK [Copy Docker Compose files] **************************************************************************************************************
+2023-04-19 21:17:31,087 p=20997 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:17:31,114 p=20997 u=vagrant n=ansible | TASK [Stop all docker containers] *************************************************************************************************************
+2023-04-19 21:17:31,662 p=20997 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.151115", "end": "2023-04-19 21:17:31.641070", "msg": "non-zero return code", "rc": 1, "start": "2023-04-19 21:17:31.489955", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2023-04-19 21:17:31,662 p=20997 u=vagrant n=ansible | ...ignoring
+2023-04-19 21:17:31,687 p=20997 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] *******************************************************************************************
+2023-04-19 21:17:32,177 p=20997 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:17:32,201 p=20997 u=vagrant n=ansible | TASK [Setup with docker-compose] **************************************************************************************************************
+2023-04-19 21:17:33,385 p=20997 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"changed": true, "cmd": "docker-compose up -d", "delta": "0:00:00.918665", "end": "2023-04-19 21:17:33.360904", "msg": "non-zero return code", "rc": 1, "start": "2023-04-19 21:17:32.442239", "stderr": "Creating network \"voapp_front-tier\" with the default driver\nCreating network \"voapp_back-tier\" with the default driver\nPulling vote (localhost:5000/examplevotingapp_vote:v1)...\nGet \"http://localhost:5000/v2/\": dial tcp [::1]:5000: connect: connection refused", "stderr_lines": ["Creating network \"voapp_front-tier\" with the default driver", "Creating network \"voapp_back-tier\" with the default driver", "Pulling vote (localhost:5000/examplevotingapp_vote:v1)...", "Get \"http://localhost:5000/v2/\": dial tcp [::1]:5000: connect: connection refused"], "stdout": "", "stdout_lines": []}
+2023-04-19 21:17:33,389 p=20997 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:17:33,390 p=20997 u=vagrant n=ansible | app01-staging              : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2023-04-19 21:20:56,907 p=21115 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:20:56,918 p=21115 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:21:02,495 p=21115 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:21:02,542 p=21115 u=vagrant n=ansible | TASK [Create remote temp dir] *****************************************************************************************************************
+2023-04-19 21:21:02,937 p=21115 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:21:02,963 p=21115 u=vagrant n=ansible | TASK [Copy Docker Compose files] **************************************************************************************************************
+2023-04-19 21:21:03,547 p=21115 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:21:03,572 p=21115 u=vagrant n=ansible | TASK [Stop all docker containers] *************************************************************************************************************
+2023-04-19 21:21:04,127 p=21115 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -a -q)", "delta": "0:00:00.155636", "end": "2023-04-19 21:21:04.107350", "msg": "non-zero return code", "rc": 1, "start": "2023-04-19 21:21:03.951714", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2023-04-19 21:21:04,127 p=21115 u=vagrant n=ansible | ...ignoring
+2023-04-19 21:21:04,154 p=21115 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] *******************************************************************************************
+2023-04-19 21:21:04,585 p=21115 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:21:04,609 p=21115 u=vagrant n=ansible | TASK [Setup with docker-compose] **************************************************************************************************************
+2023-04-19 21:21:05,746 p=21115 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"changed": true, "cmd": "docker-compose up -d", "delta": "0:00:00.870769", "end": "2023-04-19 21:21:05.720900", "msg": "non-zero return code", "rc": 1, "start": "2023-04-19 21:21:04.850131", "stderr": "Creating network \"voapp_front-tier\" with the default driver\nCreating network \"voapp_back-tier\" with the default driver\nPulling vote (localhost:5000/examplevotingapp_vote:v1)...\nGet \"http://localhost:5000/v2/\": dial tcp [::1]:5000: connect: connection refused", "stderr_lines": ["Creating network \"voapp_front-tier\" with the default driver", "Creating network \"voapp_back-tier\" with the default driver", "Pulling vote (localhost:5000/examplevotingapp_vote:v1)...", "Get \"http://localhost:5000/v2/\": dial tcp [::1]:5000: connect: connection refused"], "stdout": "", "stdout_lines": []}
+2023-04-19 21:21:05,748 p=21115 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:21:05,748 p=21115 u=vagrant n=ansible | app01-staging              : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2023-04-19 21:26:48,508 p=21346 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:26:48,523 p=21346 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:26:54,144 p=21346 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:26:54,191 p=21346 u=vagrant n=ansible | TASK [Create remote temp dir] *****************************************************************************************************************
+2023-04-19 21:26:54,572 p=21346 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:26:54,601 p=21346 u=vagrant n=ansible | TASK [Copy Docker Compose files] **************************************************************************************************************
+2023-04-19 21:26:55,188 p=21346 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:26:55,215 p=21346 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] *******************************************************************************************
+2023-04-19 21:26:55,771 p=21346 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:26:55,796 p=21346 u=vagrant n=ansible | TASK [Setup with docker-compose] **************************************************************************************************************
+2023-04-19 21:26:56,949 p=21346 u=vagrant n=ansible | fatal: [app01-staging]: FAILED! => {"changed": true, "cmd": "docker-compose up -d", "delta": "0:00:00.876299", "end": "2023-04-19 21:26:56.919405", "msg": "non-zero return code", "rc": 1, "start": "2023-04-19 21:26:56.043106", "stderr": "Creating network \"voapp_front-tier\" with the default driver\nCreating network \"voapp_back-tier\" with the default driver\nPulling vote (localhost:5000/examplevotingapp_vote:v1)...\nGet \"http://localhost:5000/v2/\": dial tcp [::1]:5000: connect: connection refused", "stderr_lines": ["Creating network \"voapp_front-tier\" with the default driver", "Creating network \"voapp_back-tier\" with the default driver", "Pulling vote (localhost:5000/examplevotingapp_vote:v1)...", "Get \"http://localhost:5000/v2/\": dial tcp [::1]:5000: connect: connection refused"], "stdout": "", "stdout_lines": []}
+2023-04-19 21:26:56,952 p=21346 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:26:56,953 p=21346 u=vagrant n=ansible | app01-staging              : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-19 21:33:02,509 p=21499 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:33:02,527 p=21499 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:33:07,802 p=21499 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:33:07,852 p=21499 u=vagrant n=ansible | TASK [Create remote temp dir] *****************************************************************************************************************
+2023-04-19 21:33:08,242 p=21499 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:33:08,267 p=21499 u=vagrant n=ansible | TASK [Copy Docker Compose files] **************************************************************************************************************
+2023-04-19 21:33:09,050 p=21499 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:33:09,076 p=21499 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] *******************************************************************************************
+2023-04-19 21:33:09,651 p=21499 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:33:09,677 p=21499 u=vagrant n=ansible | TASK [Setup with docker-compose] **************************************************************************************************************
+2023-04-19 21:34:24,166 p=21499 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:34:24,206 p=21499 u=vagrant n=ansible | TASK [Display result] *************************************************************************************************************************
+2023-04-19 21:34:24,247 p=21499 u=vagrant n=ansible | ok: [app01-staging] => {
+    "msg": "Log from docker-compose: \n {'changed': True, 'stdout': 'v1: Pulling from examplevotingapp_vote\\nDigest: sha256:cc9ee2f49de5c7aa6082efbe948b00f07f6ad226eefdd94f0614367deeeb8ae1\\nStatus: Downloaded newer image for acm:5000/examplevotingapp_vote:v1\\nv1: Pulling from examplevotingapp_result\\nDigest: sha256:2f2660be8482d40c9b076d593c7f6bda205ce4db463f3f2e2409199fd19b1495\\nStatus: Downloaded newer image for acm:5000/examplevotingapp_result:v1\\nv1: Pulling from examplevotingapp_worker\\nDigest: sha256:3cc5b992ebffedf6bd113387fae53d578e3494d60bb5bd10b343f71d2a048ba9\\nStatus: Downloaded newer image for acm:5000/examplevotingapp_worker:v1\\nalpine: Pulling from library/redis\\nDigest: sha256:da0cc759968a286f9fa8e3a0d8faca70e4dcf8ffc25fd290a041c59a9eb725c7\\nStatus: Downloaded newer image for redis:alpine\\n15-alpine: Pulling from library/postgres\\nDigest: sha256:0ce2f7c363133126dbcb1d3409dc523ecd243c55ca95a19b9b3c73c31c670b4a\\nStatus: Downloaded newer image for postgres:15-alpine', 'stderr': 'Creating network \"voapp_front-tier\" with the default driver\\nCreating network \"voapp_back-tier\" with the default driver\\nPulling vote (acm:5000/examplevotingapp_vote:v1)...\\nPulling result (acm:5000/examplevotingapp_result:v1)...\\nPulling worker (acm:5000/examplevotingapp_worker:v1)...\\nPulling redis (redis:alpine)...\\nPulling db (postgres:15-alpine)...\\nCreating voapp_result_1 ... \\r\\nCreating voapp_db_1     ... \\r\\nCreating voapp_vote_1   ... \\r\\nCreating voapp_worker_1 ... \\r\\nCreating voapp_redis_1  ... \\r\\nCreating voapp_result_1 ... done\\r\\nCreating voapp_vote_1   ... done\\r\\nCreating voapp_worker_1 ... done\\r\\nCreating voapp_db_1     ... done\\r\\nCreating voapp_redis_1  ... done', 'rc': 0, 'cmd': 'docker-compose up -d', 'start': '2023-04-19 21:33:09.918951', 'end': '2023-04-19 21:34:23.632558', 'delta': '0:01:13.713607', 'msg': '', 'stdout_lines': ['v1: Pulling from examplevotingapp_vote', 'Digest: sha256:cc9ee2f49de5c7aa6082efbe948b00f07f6ad226eefdd94f0614367deeeb8ae1', 'Status: Downloaded newer image for acm:5000/examplevotingapp_vote:v1', 'v1: Pulling from examplevotingapp_result', 'Digest: sha256:2f2660be8482d40c9b076d593c7f6bda205ce4db463f3f2e2409199fd19b1495', 'Status: Downloaded newer image for acm:5000/examplevotingapp_result:v1', 'v1: Pulling from examplevotingapp_worker', 'Digest: sha256:3cc5b992ebffedf6bd113387fae53d578e3494d60bb5bd10b343f71d2a048ba9', 'Status: Downloaded newer image for acm:5000/examplevotingapp_worker:v1', 'alpine: Pulling from library/redis', 'Digest: sha256:da0cc759968a286f9fa8e3a0d8faca70e4dcf8ffc25fd290a041c59a9eb725c7', 'Status: Downloaded newer image for redis:alpine', '15-alpine: Pulling from library/postgres', 'Digest: sha256:0ce2f7c363133126dbcb1d3409dc523ecd243c55ca95a19b9b3c73c31c670b4a', 'Status: Downloaded newer image for postgres:15-alpine'], 'stderr_lines': ['Creating network \"voapp_front-tier\" with the default driver', 'Creating network \"voapp_back-tier\" with the default driver', 'Pulling vote (acm:5000/examplevotingapp_vote:v1)...', 'Pulling result (acm:5000/examplevotingapp_result:v1)...', 'Pulling worker (acm:5000/examplevotingapp_worker:v1)...', 'Pulling redis (redis:alpine)...', 'Pulling db (postgres:15-alpine)...', 'Creating voapp_result_1 ... ', 'Creating voapp_db_1     ... ', 'Creating voapp_vote_1   ... ', 'Creating voapp_worker_1 ... ', 'Creating voapp_redis_1  ... ', 'Creating voapp_result_1 ... done', 'Creating voapp_vote_1   ... done', 'Creating voapp_worker_1 ... done', 'Creating voapp_db_1     ... done', 'Creating voapp_redis_1  ... done'], 'failed': False}\n"
+}
+2023-04-19 21:34:24,319 p=21499 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:34:24,320 p=21499 u=vagrant n=ansible | app01-staging              : ok=6    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-04-19 21:35:01,030 p=21609 u=vagrant n=ansible | PLAY [Deploy containers] **********************************************************************************************************************
+2023-04-19 21:35:01,046 p=21609 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2023-04-19 21:35:09,133 p=21609 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:35:09,188 p=21609 u=vagrant n=ansible | TASK [Create remote temp dir] *****************************************************************************************************************
+2023-04-19 21:35:09,656 p=21609 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:35:09,686 p=21609 u=vagrant n=ansible | TASK [Copy Docker Compose files] **************************************************************************************************************
+2023-04-19 21:35:10,354 p=21609 u=vagrant n=ansible | ok: [app01-staging]
+2023-04-19 21:35:10,382 p=21609 u=vagrant n=ansible | TASK [Stop all docker containers] *************************************************************************************************************
+2023-04-19 21:35:14,840 p=21609 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:35:14,870 p=21609 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] *******************************************************************************************
+2023-04-19 21:35:17,423 p=21609 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:35:17,453 p=21609 u=vagrant n=ansible | TASK [Setup with docker-compose] **************************************************************************************************************
+2023-04-19 21:36:27,948 p=21609 u=vagrant n=ansible | changed: [app01-staging]
+2023-04-19 21:36:27,986 p=21609 u=vagrant n=ansible | TASK [Display result] *************************************************************************************************************************
+2023-04-19 21:36:28,026 p=21609 u=vagrant n=ansible | ok: [app01-staging] => {
+    "msg": "Log from docker-compose: \n {'changed': True, 'stdout': 'v1: Pulling from examplevotingapp_vote\\nDigest: sha256:cc9ee2f49de5c7aa6082efbe948b00f07f6ad226eefdd94f0614367deeeb8ae1\\nStatus: Downloaded newer image for acm:5000/examplevotingapp_vote:v1\\nv1: Pulling from examplevotingapp_result\\nDigest: sha256:2f2660be8482d40c9b076d593c7f6bda205ce4db463f3f2e2409199fd19b1495\\nStatus: Downloaded newer image for acm:5000/examplevotingapp_result:v1\\nv1: Pulling from examplevotingapp_worker\\nDigest: sha256:3cc5b992ebffedf6bd113387fae53d578e3494d60bb5bd10b343f71d2a048ba9\\nStatus: Downloaded newer image for acm:5000/examplevotingapp_worker:v1\\nalpine: Pulling from library/redis\\nDigest: sha256:da0cc759968a286f9fa8e3a0d8faca70e4dcf8ffc25fd290a041c59a9eb725c7\\nStatus: Downloaded newer image for redis:alpine\\n15-alpine: Pulling from library/postgres\\nDigest: sha256:0ce2f7c363133126dbcb1d3409dc523ecd243c55ca95a19b9b3c73c31c670b4a\\nStatus: Downloaded newer image for postgres:15-alpine', 'stderr': 'Creating network \"voapp_front-tier\" with the default driver\\nCreating network \"voapp_back-tier\" with the default driver\\nPulling vote (acm:5000/examplevotingapp_vote:v1)...\\nPulling result (acm:5000/examplevotingapp_result:v1)...\\nPulling worker (acm:5000/examplevotingapp_worker:v1)...\\nPulling redis (redis:alpine)...\\nPulling db (postgres:15-alpine)...\\nCreating voapp_vote_1 ... \\r\\nCreating voapp_redis_1 ... \\r\\nCreating voapp_worker_1 ... \\r\\nCreating voapp_db_1     ... \\r\\nCreating voapp_result_1 ... \\r\\nCreating voapp_db_1     ... done\\r\\nCreating voapp_redis_1  ... done\\r\\nCreating voapp_worker_1 ... done\\r\\nCreating voapp_result_1 ... done\\r\\nCreating voapp_vote_1   ... done', 'rc': 0, 'cmd': 'docker-compose up -d', 'start': '2023-04-19 21:35:17.698487', 'end': '2023-04-19 21:36:27.464005', 'delta': '0:01:09.765518', 'msg': '', 'stdout_lines': ['v1: Pulling from examplevotingapp_vote', 'Digest: sha256:cc9ee2f49de5c7aa6082efbe948b00f07f6ad226eefdd94f0614367deeeb8ae1', 'Status: Downloaded newer image for acm:5000/examplevotingapp_vote:v1', 'v1: Pulling from examplevotingapp_result', 'Digest: sha256:2f2660be8482d40c9b076d593c7f6bda205ce4db463f3f2e2409199fd19b1495', 'Status: Downloaded newer image for acm:5000/examplevotingapp_result:v1', 'v1: Pulling from examplevotingapp_worker', 'Digest: sha256:3cc5b992ebffedf6bd113387fae53d578e3494d60bb5bd10b343f71d2a048ba9', 'Status: Downloaded newer image for acm:5000/examplevotingapp_worker:v1', 'alpine: Pulling from library/redis', 'Digest: sha256:da0cc759968a286f9fa8e3a0d8faca70e4dcf8ffc25fd290a041c59a9eb725c7', 'Status: Downloaded newer image for redis:alpine', '15-alpine: Pulling from library/postgres', 'Digest: sha256:0ce2f7c363133126dbcb1d3409dc523ecd243c55ca95a19b9b3c73c31c670b4a', 'Status: Downloaded newer image for postgres:15-alpine'], 'stderr_lines': ['Creating network \"voapp_front-tier\" with the default driver', 'Creating network \"voapp_back-tier\" with the default driver', 'Pulling vote (acm:5000/examplevotingapp_vote:v1)...', 'Pulling result (acm:5000/examplevotingapp_result:v1)...', 'Pulling worker (acm:5000/examplevotingapp_worker:v1)...', 'Pulling redis (redis:alpine)...', 'Pulling db (postgres:15-alpine)...', 'Creating voapp_vote_1 ... ', 'Creating voapp_redis_1 ... ', 'Creating voapp_worker_1 ... ', 'Creating voapp_db_1     ... ', 'Creating voapp_result_1 ... ', 'Creating voapp_db_1     ... done', 'Creating voapp_redis_1  ... done', 'Creating voapp_worker_1 ... done', 'Creating voapp_result_1 ... done', 'Creating voapp_vote_1   ... done'], 'failed': False}\n"
+}
+2023-04-19 21:36:28,096 p=21609 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-04-19 21:36:28,098 p=21609 u=vagrant n=ansible | app01-staging              : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
